@@ -1,3 +1,5 @@
+-e .
+
 click
 Sphinx
 coverage

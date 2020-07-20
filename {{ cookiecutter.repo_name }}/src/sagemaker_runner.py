@@ -13,8 +13,8 @@ if __name__ == '__main__':
 
         entry_point = 'remote_main.py'
         utils.copy_source_dir(utils.get_source_root_dir(),
-                              entry_point,
-                              tmpdir)
+                              tmpdir,
+                              entry_point)
 
         runner = SKLearn(entry_point=entry_point,
                          source_dir=tmpdir,
