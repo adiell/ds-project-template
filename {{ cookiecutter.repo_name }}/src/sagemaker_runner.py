@@ -8,13 +8,15 @@ role = '{{ cookiecutter.sagemaker_role }}'
 
 
 if __name__ == '__main__':
+
     with tempfile.TemporaryDirectory() as tmpdir:
 
+        entry_point = 'remote_main.py'
         utils.copy_source_dir(utils.get_source_root_dir(),
-                              'models/remote_main.py',
+                              entry_point,
                               tmpdir)
 
-        runner = SKLearn(entry_point='remote_main.py',
+        runner = SKLearn(entry_point=entry_point,
                          source_dir=tmpdir,
                          role=role,
                          py_version='py3',
@@ -25,7 +27,6 @@ if __name__ == '__main__':
                          tags=[{'Key': 'User', 'Value': utils.get_running_user()}],
                          metric_definitions=[{'Name': 'Test error', 'Regex': 'Test error ([0-9.]*)'},
                                              {'Name': 'Train error', 'Regex': 'Train error ([0-9.]*)'}]
-                        )
+                         )
 
-        print("Start running SM")
         runner.fit(wait=True)

@@ -15,12 +15,12 @@ def get_running_user():
         return "Unknown"
 
 
-def copy_source_dir(source_dir, additional_files, destination):
-    print(destination)
+def copy_source_dir(source_dir, destination, entry_point, requirements_file=None):
     from subprocess import call
     call(["cp", source_dir, destination, "-r"])
-    call(["cp", os.path.join(source_dir, additional_files), destination])
-    print("")
+    call(["cp", os.path.join(source_dir, entry_point), destination])
+    if requirements_file:
+        call(["cp", os.path.join(source_dir, requirements_file), os.path.join(destination, 'requirements.txt')])
 
 
 

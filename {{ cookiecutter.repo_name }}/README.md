@@ -46,3 +46,12 @@ Project Organization
     └── README.md          <- The top-level README for developers using this project.
 
 
+
+
+To perform various task use can use `make`.
+
+For example:
+* `make create_environment` will create a new virtual environment 
+* `make requirements` will install requirements from `requirements.txt`
+
+To see a complete list of tasks run `make help`.
