@@ -6,26 +6,21 @@
 Project Organization
 ------------
 
-    ├── data
+    ├── data               <- directory is for consistent data placement. contents are gitignored by default.
     │   ├── external       <- Data from third party sources.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
+    │   ├── interim        <- intermediate results (mostly for debugging)
+    │   ├── processed      <- The final transformed data used for reporting, modeling, etc
+    │   └── raw            <- Raw data to use as inputs to rest of pipeline
     │
-    ├── models             <- Trained and serialized models, model predictions, or model summaries
+    ├── models             <- Trained and serialized models, model predictions, or model summaries (gitignored by default)
     │
-    ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-    │                         the creator's initials, and a short `-` delimited description, e.g.
-    │                         `1.0-jqp-initial-data-exploration`.
+    ├── notebooks          <- Jupyter notebooks. 
     │
     ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
     │
     ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
     │   └── figures        <- Generated graphics and figures to be used in reporting
     │
-    ├── requirements.txt   <- The requirements file for reproducing the analysis environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
-    │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
     ├── src                <- Source code for use in this project.
     │   ├── __init__.py    <- Makes src a Python module
     │   │
@@ -42,7 +37,11 @@ Project Organization
     │   │
     │   └── visualization  <- Scripts to create exploratory and results oriented visualizations
     │       └── visualize.py
+    │    
+    ├── tests              <- Tests for the code
     │
+    ├── requirements.txt   <- The requirements file for reproducing the environment
+    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
     ├── Makefile           <- Makefile with commands like `make data` or `make train`
     └── README.md          <- The top-level README for developers using this project.
 
