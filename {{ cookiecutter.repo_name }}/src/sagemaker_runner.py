@@ -4,6 +4,8 @@ import tempfile
 from pathlib import Path
 from src import utils
 
+role = '{{ cookiecutter.sagemaker_role }}'
+
 
 if __name__ == '__main__':
     with tempfile.TemporaryDirectory() as tmpdir:
